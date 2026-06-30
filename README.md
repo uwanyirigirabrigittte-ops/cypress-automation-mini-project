@@ -1,0 +1,10 @@
+1. what i learned 
+- Test Structure & Organization: How to cleanly arrange tests using Mocha syntax hooks like `describe()`, `it()`, and `beforeEach()`.
+- UI Elements Manipulation: Interacting with distinct interface elements including text inputs, dropdowns, native checkboxes, and radio buttons.
+- Native File Uploads: Bypassing older, brittle external plugins to cleanly upload mock files natively via the `.selectFile()` command.
+- DOM Assertions:Formulating reliable conditions using explicit Cypress commands (like `.should('be.checked')` or `.and('contain', ...)`).
+
+
+4. A Short Reflection (200–300 words)
+
+Building this automation suite provided excellent insight into E2E testing dynamics. The easiest concept to understand was organizing the test scripts. The structural design provided by Cypress using Mocha hooks specifically describe(), it(), and beforeEach() blocks was highly intuitive. It logically aligns with how a human writes down a literal checklist of things to test, which made separating the standard UI component workflows from the Part H form validation scenario clean and readable. Basic actions like .type() and .click() also felt immediately clear and readable.Conversely, the most challenging aspect was handling file uploads and sorting out DOM environment discrepancies. Initially, relying on external node plugins like cypress-file-upload led to a breaking error because plugin commands weren't recognized properly. Overcoming this roadblock forced me to study the official Cypress documentation, where I discovered that modern versions natively support file interactions through the .selectFile() command. Additionally, dealing with asynchronous URL mismatches taught me a critical lesson about ensuring the exact domain paths are specified before targeting specific elements. Debugging these script errors was frustrating at first, but it ultimately made me a more capable and resilient automation tester.
