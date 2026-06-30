@@ -3,7 +3,9 @@ describe("Test Automation Practice Suite", { testIsolation: false }, () => {
     //visit the website
     cy.visit("https://testautomationpractice.blogspot.com/");
   });
-
+  afterEach(function () {
+    cy.screenshot(this.currentTest.fullTitle());
+  });
   it("Fill out the form", () => {
     cy.get("#name").type("John Doe");
     cy.get("#email").type("john.doe@example.com");
